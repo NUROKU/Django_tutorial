@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>日付</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in post_list %}
+    <tr>
+      <td><a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a></td>
+      <td>{{ post.date }}</td>
+      <td>
+        {% if user.is_superuser %}
+          <a href="{% url 'blog:post_update' post.pk %}">編集</a>
+        {% endif %}
+      </td>
+      <td>
+        {% if user.is_superuser %}
+          <a href="{% url 'blog:post_delete' post.pk %}">削除</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

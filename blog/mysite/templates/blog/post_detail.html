@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>タイトル</th>
+        <td>{{ post.title }}</td>
+    </tr>
+    <tr>
+        <th>本文</th>
+        <td>{{ post.text | linebreaksbr }}</td>
+    </tr>
+    <tr>
+        <th>日付</th>
+        <td>{{ post.date }}</td>
+    </tr>
+</table>
+{% endblock %}
