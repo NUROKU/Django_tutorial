@@ -2,7 +2,7 @@ djangotutorial: 公式チュートリアル
 blog: https://zenn.dev/tmasuyama1114/articles/django-tutorial-blogapp-1
 user: ユーザー作成テスト https://techinit.co.jp/django-custom-user-auth/ を自分なりに改変
 mailuser_failed: ユーザーメール認証うごかない https://qiita.com/koseidaiki/items/85279375555a533c9318
-
+mailuser: ChatGPTに聞いた
 
 django-admin startproject mysite
 manage.py startapp ****
