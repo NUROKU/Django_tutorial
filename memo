@@ -1,7 +1,7 @@
 djangotutorial: 公式チュートリアル
 blog: https://zenn.dev/tmasuyama1114/articles/django-tutorial-blogapp-1
-user: ユーザー作成と認証テスト https://techinit.co.jp/django-custom-user-auth/ を自分なりに改変
-https://qiita.com/fukiko2020/items/3bc8ab3752ac1663e2de
+user: ユーザー作成テスト https://techinit.co.jp/django-custom-user-auth/ を自分なりに改変
+mailuser_failed: ユーザーメール認証うごかない https://qiita.com/koseidaiki/items/85279375555a533c9318
 
 
 django-admin startproject mysite
