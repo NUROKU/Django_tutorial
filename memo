@@ -1,0 +1,9 @@
+djangotutorial: 公式チュートリアル
+blog: https://zenn.dev/tmasuyama1114/articles/django-tutorial-blogapp-1
+user: ユーザー作成と認証テスト https://techinit.co.jp/django-custom-user-auth/ を自分なりに改変
+https://qiita.com/fukiko2020/items/3bc8ab3752ac1663e2de
+
+
+django-admin startproject mysite
+manage.py startapp ****
+pip install django-allauth
