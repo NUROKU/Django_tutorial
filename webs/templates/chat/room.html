@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>チャットルーム: {{ room_name }}</h2>
+
+<textarea id="chat-log" cols="100" rows="20" readonly>
+    {% for msg in messages %}
+    {{ msg.user }}: {{ msg.content }}
+    {% endfor %}
+</textarea>
+
+<form id="chat-form">
+    <input id="chat-message-input" type="text" size="100" autocomplete="off">
+    <button id="chat-message-submit" type="submit">送信</button>
+</form>
+
+<script>
+    const roomName = "{{ room_name }}";
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.hostname + ':8001/ws/chat/' + roomName + '/'
+    );
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        const chatLog = document.querySelector('#chat-log');
+        chatLog.value += data.message + '\n';
+        chatLog.scrollTop = chatLog.scrollHeight;
+    };
+
+    const form = document.querySelector('#chat-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const input = document.querySelector('#chat-message-input');
+        const message = input.value.trim();
+        if (message.length > 0) {
+            chatSocket.send(JSON.stringify({ 'message': message }));
+            input.value = '';
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<h1>ルーム作成</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="room_name" required>
+  <button type="submit">作成</button>
+</form>
